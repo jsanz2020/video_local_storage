@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    
+    <!-- Template para el widget de reproductor de video -->
+    <t t-name="video_local_storage.VideoPlayerWidget">
+        <div class="o_video_player_widget">
+            <div t-if="showVideoPlayer" class="o_video_player">
+                <video t-ref="video" controls="controls" preload="metadata" 
+                       t-att-src="videoSrc" class="o_video_element">
+                    <source t-att-src="videoSrc" t-att-type="videoMimetype"/>
+                    Tu navegador no soporta la reproducción de video HTML5.
+                </video>
+                
+                <div class="o_video_controls">
+                    <button type="button" class="o_video_control_btn" t-on-click="onPlayPause">
+                        <i class="fa fa-play"/> / <i class="fa fa-pause"/>
+                    </button>
+                    <button type="button" class="o_video_control_btn" t-on-click="onFullscreen">
+                        <i class="fa fa-expand"/>
+                    </button>
+                </div>
+            </div>
+            
+            <div t-else="" class="o_video_embed">
+                <t t-raw="props.record.data.video_embed_code"/>
+            </div>
+        </div>
+    </t>
+
+    <!-- Template para información del archivo -->
+    <t t-name="video_local_storage.VideoFileInfo">
+        <div class="o_video_file_info">
+            <div class="info-item">
+                <span class="info-label">Nombre:</span>
+                <span class="info-value" t-esc="props.filename"/>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Tamaño:</span>
+                <span class="info-value" t-esc="props.filesize"/>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Tipo:</span>
+                <span class="info-value" t-esc="props.mimetype"/>
+            </div>
+            <div class="info-item" t-if="props.duration">
+                <span class="info-label">Duración:</span>
+                <span class="info-value" t-esc="props.duration"/>
+            </div>
+        </div>
+    </t>
+
+    <!-- Template para el estado de carga -->
+    <t t-name="video_local_storage.VideoLoading">
+        <div class="o_video_loading">
+            <div class="loading-spinner"></div>
+            <p>Cargando video...</p>
+        </div>
+    </t>
+
+    <!-- Template para errores -->
+    <t t-name="video_local_storage.VideoError">
+        <div class="o_video_error">
+            <i class="fa fa-exclamation-triangle error-icon"/>
+            <span t-esc="props.message"/>
+        </div>
+    </t>
+
+</templates>
