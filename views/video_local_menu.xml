@@ -1,1 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Menú Principal -->
+    <menuitem id="menu_video_local_root" 
+              name="Videos" 
+              web_icon="video_local_storage,static/description/icon.png"
+              sequence="100"/>
+    
+    <!-- Submenús -->
+    <menuitem id="menu_video_local_videos" 
+              name="Videos" 
+              parent="menu_video_local_root"
+              action="action_video_local"
+              sequence="10"/>
+    
+    <menuitem id="menu_video_local_categories" 
+              name="Categorías" 
+              parent="menu_video_local_root"
+              action="action_video_category"
+              sequence="20"/>
+    
+    <menuitem id="menu_video_local_tags" 
+              name="Etiquetas" 
+              parent="menu_video_local_root"
+              action="action_video_tag"
+              sequence="30"/>
 
+</odoo>
