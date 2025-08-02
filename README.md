@@ -327,12 +327,12 @@ Este módulo está licenciado bajo LGPL-3.0.
 ## Soporte
 
 Para soporte técnico:
-- Email: soporte@tucompania.com
-- Documentación: https://docs.tucompania.com/video-local-storage
-- Issues: https://github.com/tucompania/video-local-storage/issues
+- Email: 
+- Documentación: 
+- Issues: 
 
 ---
 
 **Versión**: 18.0.1.0.0  
-**Autor**: Tu Nombre  
+**Autor**: 
 **Fecha**: 2025
